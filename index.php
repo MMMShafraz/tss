@@ -2,7 +2,7 @@
 include("./Admin/dbcon/user.php");
 require_once("./Admin/dbcon/dbcon.php");
 
-$query = "SELECT * FROM facility_info";
+$query = "SELECT * FROM facility_info ORDER BY ID";
 $result=mysqli_query($con,$query);
 ?>
 <!DOCTYPE html>
@@ -59,9 +59,10 @@ $result=mysqli_query($con,$query);
     while($myrow=mysqli_fetch_row($result))  {
 		echo "<tr>";
 		for($f=1;$f<mysqli_num_fields($result)-1;$f++)  {
-			echo "<div class=box>&nbsp<h3>".htmlspecialchars($myrow[$f]);
-            echo "<p><br>".htmlspecialchars($myrow[$f+2]);
-            $f=$f+4;
+			echo "<div class=box id=$f+1>";
+            echo"<h3>".htmlspecialchars($myrow[$f]);
+            echo "</h3><p>".htmlspecialchars($myrow[$f+2]);
+            $f=$f+3;
             echo "<br><a href=Login/login.php class=btn> learn more </a></div>";
 		}
     }
