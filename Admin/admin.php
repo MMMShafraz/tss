@@ -5,15 +5,15 @@ $mess="";
 
 
 if(isset($_POST["submit"])&&$_POST["submit"]=="Sign in") {	
-	require_once("dbcon/user.php");
-	include("dbcon/dbcon.php");
+	require_once("./dbcon/user.php");
+	include("./dbcon/dbcon.php");
 	
 	
 	$user = $_POST["uname"];
 $password = md5($_POST["password"]);
 
 // Prepare statement and bind parameters
-$stmt = mysqli_prepare($con, "SELECT user_name FROM user_info WHERE user_name=? AND password=?");
+$stmt = mysqli_prepare($con, "SELECT user_name FROM admin_info WHERE user_name=? AND password=?");
 mysqli_stmt_bind_param($stmt, "ss", $user, $password);
 
 // Execute statement
@@ -30,7 +30,7 @@ if (mysqli_num_rows($result) > 0) {
   exit;
 } else {
   // Check if username is invalid or password is incorrect
-  $query = "SELECT user_name FROM user_info WHERE user_name = '$user'";
+  $query = "SELECT user_name FROM admin_info WHERE user_name = '$user'";
   $result = mysqli_query($con, $query);
   if (mysqli_num_rows($result) == 0) {
     $mess = "<font color=red size=2><b>Invalid username.<br>Please try again.</b></font>";
@@ -45,26 +45,27 @@ if (mysqli_num_rows($result) > 0) {
 
 <html>
 <head>
-	<title>User Page</title>
+	<title>Admin Page</title>
 	<link rel="stylesheet" href="style.css">
-	<link rel="stylesheet" href="../login_style.css">
+	<link rel="stylesheet" href="../login_style.css"
 </head>
-<body >
+<body>
 <header class="header">
 
 <a href="#" class="logo"><span class="ln1">Online TECH</span><br><span class="ln2">SUPPORT</span> </a>
 
 <nav class="navbar">
-	<a href="./index">Home</a>
+	<a href="index.php">Home</a>
+	<a href="logoff.php" class="btn login">Sign Off</a>
 </nav>
 
 </header>
-	<center>
+<center>
 	<br /><br /><br /><br /><br /><br /><br />
-		<div>
-	<center style=>
+			<div>
+	<center style="color: black;">
 		<br />
-		<h2>User Login</h2>		
+		<h2>Admin Login</h2>		
 		<form name="signin" method="post"  action="">
 			
 			<table height="80px">
@@ -86,13 +87,14 @@ if (mysqli_num_rows($result) > 0) {
 	</center>		
 		
 	<center>
-		<font size="3">If you are a new user</font><br>
+		<font size="3" >If you are a new admin</font><br>
 		<a href="registration.php" style="text-decoration:none;color:blue">Register now</a>
 	<br>
 	<br>
 	</center>
 </div>
 <br><br>
+<!-- <img src="System-Administration-Help-Desk-Support.jpg" width="40%"> -->
 	<center>	
 </body>
 </html>
