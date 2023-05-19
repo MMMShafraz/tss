@@ -63,7 +63,7 @@ $result=mysqli_query($con,$query);
             echo"<h3>".htmlspecialchars($myrow[$f]);
             echo "</h3><p>".htmlspecialchars($myrow[$f+2]);
             $f=$f+3;
-            echo "<br><a href=login.php class=btn> learn more </a></div>";
+            echo "<br><a class=btn href=../Facilities/fac".urlencode($myrow[2]); echo" > learn more </a></div>";
 		}
     }
         ?>

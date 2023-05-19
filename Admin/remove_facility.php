@@ -17,7 +17,7 @@ if(isset($_GET["uname_d"])) {
 			
 	$user_name=$_GET["uname_d"];
 
-	$query2 = "DELETE FROM user_info WHERE user_name = '$user_name'";
+	$query2 = "DELETE FROM facility_info WHERE facility_name = '$user_name'";
 	$result2 = mysqli_query($con,$query2);
 
 	if(!$result2) {
@@ -30,7 +30,7 @@ if(isset($_GET["uname_d"])) {
 	
 }
 ?>
-<html>
+<!DOCTYPE html>
 <head>
 	<title>View User Information</title>
 	<link rel="stylesheet" href="style.css">
@@ -99,11 +99,11 @@ if(isset($_GET["uname_d"])) {
 		for($f=0;$f<mysqli_num_fields($result)-1;$f++)  {
 			echo "<td>&nbsp;".htmlspecialchars($myrow[$f]);
 		}
-		echo "<td width='5%' align='center' bgcolor=red><a onClick='return delete_test()' href='?uname_d=".urlencode($myrow[7
+		echo "<td width='5%' align='center' bgcolor=red><a onClick='return delete_test()' href='?uname_d=".urlencode($myrow[1
 ])."' style=text-decoration:none;color:white;>Delete</a>";
 	}
 	echo "</table>\n";
 	
-
+?>
 </body>
 </html>
