@@ -59,7 +59,7 @@ if(isset($_POST["submit"])) {
 	<div style=background-image:linear-gradient(white,white);width:40%;font-size:12px;padding:2%;box-shadow:0.5rem,0.5rem,#5478ec33>
 	<h1>
 	<font color='black'>
-	<b>Information has been entered.</b>
+	<b>Information has been updated.</b>
 	</font>
 	</h1>
 	<a href='view_user_info.php' style=font-size:20px;text-decoration:none>

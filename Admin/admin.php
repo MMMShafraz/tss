@@ -55,8 +55,7 @@ if (mysqli_num_rows($result) > 0) {
 <a href="#" class="logo"><span class="ln1">Online TECH</span><br><span class="ln2">SUPPORT</span> </a>
 
 <nav class="navbar">
-	<a href="index.php">Home</a>
-	<a href="logoff.php" class="btn login">Sign Off</a>
+	<a href="../index.php">Home</a>
 </nav>
 
 </header>
@@ -98,3 +97,4 @@ if (mysqli_num_rows($result) > 0) {
 	<center>	
 </body>
 </html>
+

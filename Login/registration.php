@@ -27,8 +27,8 @@ if(isset($_POST["submit"])) {
 	}
 	
 	$username=$_POST["username"];
-	$password=md4($_POST["password"]);
-	$password_conf=md4($_POST["password_conf"]);
+	$password=md5($_POST["password"]);
+	$password_conf=md5($_POST["password_conf"]);
 	
 	
 	
@@ -37,17 +37,43 @@ if(isset($_POST["submit"])) {
 		exit;
 	}
 	
-	$query = "INSERT INTO user_info(first_name, last_name, id, gender, district, email_address, email_notification,
-					user_name, password) VALUES('$first_name', '$last_name', '$id', '$gender', '$district', '$email', '$notification', '$username', '$password')";
+	$query = "INSERT INTO user_info(`first_name`, `last_name`, `id`, `gender`, `district`, `email_address`, `email_notification`,`user_name`, `password`) VALUES('$first_name', '$last_name', '$id', '$gender', '$district', '$email', '$notification', '$username', '$password')";
 	$result = mysqli_query($con,$query);
 	
 	if(!$result) {
 		$error = mysqli_error($con);
-		print $error+"Insert anomally";
+		print $error;
 		exit;
 	}
 	
 	$mess = "<font color='blue'>User Successfully Created</font>";
+    echo "<head><link rel=stylesheet href=style.css></head>
+	<body style=background-image:linear-gradient(90deg,white,#5478ec33);color:black;font-family:'Poppins',sans-serif;font-size:1.7rem;>
+	<header class=header>
+<a href=# class=logo><span class=ln1>Online TECH</span><br><span class=ln2>SUPPORT</span> </a>
+
+<nav class=navbar>
+	<a href=login.php>Home</a>
+	
+</nav>
+</header><br><br>
+	<center>
+	<br><br>
+	<div style=background-image:linear-gradient(white,white);width:40%;font-size:12px;padding:2%;box-shadow:0.5rem,0.5rem,#5478ec33>
+	<h1>
+	<font color='black'>
+	<b>Information has been entered.</b>
+	</font>
+	</h1>
+	<a href='login.php' style=font-size:20px;text-decoration:none>
+	<input type=submit value=back class='btn'>
+	</a>
+	</div>
+	</center>
+	</body>";
+	
+	exit;
+
 }
 ?>
 <html>
@@ -99,8 +125,8 @@ if(isset($_POST["submit"])) {
 		echo $mess;
 	?>
 	<br><br>
-	<form name="user" method="post" action="" onSubmit="return testform()">	
-	<div style="width:40%;"><table style="font-size:1.7re,">
+	<form name="user" method="post" action="">	
+	<div style="width:40%;"><table style="font-size:1.7rem,">
 		<br>
 		<tr><td><h1><center><b>Registration Form</b></center></h1></td></tr>
 		<tr>
@@ -151,7 +177,7 @@ if(isset($_POST["submit"])) {
 				</select><br><br>
 				
 				E-MAIL:<br>
-				<input type="textbox" name="email" size="40" maxlength="60"><br><br>
+				<input type="email" name="email" size="40" maxlength="60"><br><br>
 						
 				SEND E-MAIL NOTIFICATIONS:<br>
 				<input type="checkbox" name="notification" value="send"><br><br>

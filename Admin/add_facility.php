@@ -8,8 +8,6 @@
 
 	$mess = "";
 
-	
-
 if(isset($_GET["uname_d"])) {
 
 	include("dbcon/user.php");

@@ -1,5 +1,9 @@
 <?php
-		
+session_start();
+if(!isset($_SESSION["uname"]))  {
+	header("Location:error.html");
+	exit;
+ }		
 $mess = "";
 
 if(isset($_POST["submit"])) {
@@ -9,11 +13,48 @@ if(isset($_POST["submit"])) {
 	include("dbcon/dbcon.php");	//database connection function
 
 	
-	$Facility_No=$_POST["Facility No"];
-	$Facility_name=$_POST["Facility Name"];
-	$description=$_POST["description"];
-	$Price=$_POST["price"];
-}
+	$Facility_No=$_POST["facility_No"];
+	$Facility_name=$_POST["Facility_Name"];
+	$description=$_POST["Description"];
+	$Price=$_POST["Price"];
+	$query2 = "INSERT INTO `facility_info`(`facility_no`, `facility_name`, `description`, `price`) VALUES ('$Facility_No','$Facility_name','$description','$Price')";
+$result2 = mysqli_query($con,$query2);
+
+if(!$result2) {
+$err=mysqli_error($con);
+print $err;
+exit();
+} 
+
+echo "<head><link rel=stylesheet href=style.css></head>
+<body style=background-image:linear-gradient(90deg,white,#5478ec33);color:black;font-family:'Poppins',sans-serif;font-size:1.7rem;>
+<header class=header>
+<a href=# class=logo><span class=ln1>Online TECH</span><br><span class=ln2>SUPPORT</span> </a>
+
+<nav class=navbar>
+<a href=index.php>Home</a>
+<a href=logoff.php class=btn login>Sign Off</a>
+</nav>
+</header><br><br>
+<center>
+<br><br>
+<div style=background-image:linear-gradient(white,white);width:40%;font-size:12px;padding:2%;box-shadow:0.5rem,0.5rem,#5478ec33>
+<h1>
+<font color='black'>
+<b>Information has been updated.</b>
+</font>
+</h1>
+<a href='view_user_info.php' style=font-size:20px;text-decoration:none>
+<input type=submit value=back class='btn'>
+</a>
+</div>
+</center>
+</body>";
+
+exit;
+
+} 
+
 ?>
 <html>
 <head>
@@ -23,7 +64,7 @@ if(isset($_POST["submit"])) {
 	<script language="javascript">
 	<!--
 		function testform() {
-			if(document.user.Facility_No.value=='') {
+			if(document.user.facility_No.value=='') {
 				alert("Please enter the Facility No");
 				return false;
 			}
@@ -69,7 +110,7 @@ if(isset($_POST["submit"])) {
 				Descripton:<br>
 				<input type="text" name="Description" size="40" maxlength="70" align="right"><br><br>
 										
-				Price:<br>
+				Price($):<br>
 				<input type="textbox" name="Price" size="12" maxlength="15"><br><br>
 				
 				<input type="submit" name="submit" value=" Submit " onclick="location.href='admin.php'" class="btn">
