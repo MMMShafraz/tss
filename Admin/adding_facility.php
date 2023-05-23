@@ -33,6 +33,7 @@ echo "<head><link rel=stylesheet href=style.css></head>
 
 <nav class=navbar>
 <a href=index.php>Home</a>
+<a href=home.php>Dashboard</a>
 <a href=logoff.php class=btn login>Sign Off</a>
 </nav>
 </header><br><br>

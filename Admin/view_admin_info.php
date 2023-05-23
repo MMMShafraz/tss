@@ -17,7 +17,7 @@ if(isset($_GET["uname_d"])) {
 			
 	$user_name=$_GET["uname_d"];
 
-	$query2 = "DELETE FROM user_info WHERE user_name = '$user_name'";
+	$query2 = "DELETE FROM admin_info WHERE user_name = '$user_name'";
 	$result2 = mysqli_query($con,$query2);
 
 	if(!$result2) {
@@ -78,7 +78,7 @@ if(isset($_GET["uname_d"])) {
 
 
 	$query = "SELECT first_name, last_name, id, gender, district, email_address, email_notification, user_name FROM
-				user_info";
+				admin_info";
 	$result=mysqli_query($con,$query);	
 	
 	
@@ -105,13 +105,13 @@ if(isset($_GET["uname_d"])) {
 			echo "<td>&nbsp;".htmlspecialchars($myrow[$f]);
 		}
 		echo "<td width='5%' align='center' bgcolor=lightgreen>
-		<a href='./edit_user_info.php?uname=".urlencode($myrow[7])."' style=text-decoration:none;color:white;>Edit</a>";
+		<a href='./edit_admin_info.php?uname=".urlencode($myrow[7])."' style=text-decoration:none;color:white;>Edit</a>";
 		echo "<td width='5%' align='center' bgcolor=red><a onClick='return delete_test()' href='?uname_d=".urlencode($myrow[7
 ])."' style=text-decoration:none;color:white;>Delete</a>";
 	}
 	echo "</table>\n";
 	echo "<td width='10%' align='center'>"?>
-		<a href='../Login/registration.php' style="text-decoration:none;
+		<a href='registration.php' style="text-decoration:none;
 		color: black;
 		background-color: white;
 		font-size:20px;

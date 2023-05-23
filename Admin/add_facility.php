@@ -30,7 +30,8 @@ if(isset($_GET["uname_d"])) {
 <a href="#" class="logo"><span class="ln1">Online TECH</span><br><span class="ln2">SUPPORT</span> </a>
 
 <nav class="navbar">
-	<a href="../index.php">Home</a>
+	<a href="index.php">Home</a>
+	<a href="home.php">Dashboard</a>
 	<a href="logoff.php" class="btn login">Sign Off</a>
 </nav>
 

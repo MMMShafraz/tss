@@ -48,6 +48,7 @@ if(isset($_GET["uname_d"])) {
 
 <nav class="navbar">
 	<a href="index.php">Home</a>
+	<a href="home.php">Dashboard</a>
 	<a href="logoff.php" class="btn login">Sign Off</a>
 </nav>
 
@@ -96,9 +97,13 @@ if(isset($_GET["uname_d"])) {
 	
 	while($myrow=mysqli_fetch_row($result))  {
 		echo "<tr>";
-		for($f=0;$f<mysqli_num_fields($result)-1;$f++)  {
-			echo "<td>&nbsp;".htmlspecialchars($myrow[$f]);
+		for($f=0;$f<mysqli_num_fields($result);$f++)  {
+			if($f!=2){
+			echo "<td style=text-align:center>&nbsp;".htmlspecialchars($myrow[$f]);
+			}
 		}
+		echo "<td width='5%' align='center' bgcolor=lightgreen>
+		<a href='./edit_user_info.php?uname=".urlencode($myrow[1])."' style=text-decoration:none;color:white;>Edit</a>";
 		echo "<td width='5%' align='center' bgcolor=red><a onClick='return delete_test()' href='?uname_d=".urlencode($myrow[1
 ])."' style=text-decoration:none;color:white;>Delete</a>";
 	}

@@ -55,6 +55,7 @@ if(isset($_POST["submit"])) {
 
 <nav class=navbar>
 	<a href=index.php>Home</a>
+	<a href=home.php>Dashboard</a>
 </nav>
 </header><br><br>
 	<center>
@@ -179,7 +180,7 @@ if(isset($_POST["submit"])) {
 				</select><br><br>
 				
 				E-MAIL:<br>
-				<input type="textbox" name="email" size="40" maxlength="60"><br><br>
+				<input type="textbox" name="email" size="40" maxlength="60" oninput="this.value = this.value.toUpperCase()" required /><br><br>
 						
 				SEND E-MAIL NOTIFICATIONS:<br>
 				<input type="checkbox" name="notification" value="send"><br><br>
