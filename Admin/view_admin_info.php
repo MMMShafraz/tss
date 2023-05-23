@@ -118,21 +118,7 @@ if(isset($_GET["uname_d"])) {
 		box-shadow: 0.2rem 0.2rem 0 rgba(84, 120, 236, 0.2);
 		border:.1rem solid black;
 		padding:2px;">+ ADD</a><br>
-	<!-- <center><a href='home.php' style="text-decoration:none;
-    color: black;
-    background-color: white;
-    font-size:20px;
-    box-shadow: 0.2rem 0.2rem 0 rgba(84, 120, 236, 0.2);
-    border: .1rem solid black;
-    padding: 2px;">back to home</a></center>	
-			<h3 align="center" ><a href="logoff.php" style="text-decoration:none;
-    color: black;
-    background-color: white;
-    font-size:20px;
-    box-shadow: 0.2rem 0.2rem 0 rgba(84, 120, 236, 0.2);
-    border: .1rem solid black;
-    padding: 2px;
-">Log Out</a></h3> -->
+	
 		
 </body>
 </html>
