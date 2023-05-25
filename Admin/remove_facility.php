@@ -103,7 +103,7 @@ if(isset($_GET["uname_d"])) {
 			}
 		}
 		echo "<td width='5%' align='center' bgcolor=lightgreen>
-		<a href='./edit_user_info.php?uname=".urlencode($myrow[1])."' style=text-decoration:none;color:white;>Edit</a>";
+		<a href='./edit_facility.php?uname=".urlencode($myrow[1])."' style=text-decoration:none;color:white;>Edit</a>";
 		echo "<td width='5%' align='center' bgcolor=red><a onClick='return delete_test()' href='?uname_d=".urlencode($myrow[1
 ])."' style=text-decoration:none;color:white;>Delete</a>";
 	}

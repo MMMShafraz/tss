@@ -63,7 +63,7 @@ if(isset($_POST["submit"])) {
 	<b>Information has been updated.</b>
 	</font>
 	</h1>
-	<a href='view_user_info.php' style=font-size:20px;text-decoration:none>
+	<a href='view_admin_info.php' style=font-size:20px;text-decoration:none>
 	<input type=submit value=back class='btn'>
 	</a>
 	</div>
@@ -97,7 +97,7 @@ if(isset($_POST["submit"])) {
 		}		
 	</script>
 	<link rel="stylesheet" href="style.css">
-	<link rel="stylesheet" href="../login_style.css">
+	<link rel="stylesheet" href="login_style.css">
 </head>
 <body style="font-size:1.7rem">
 <header class="header">

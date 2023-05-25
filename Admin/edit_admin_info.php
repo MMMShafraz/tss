@@ -34,7 +34,7 @@ if(isset($_POST["submit"])) {
 	$user_name = $_POST["user_name"];
 	
 	
-	$query2 = "UPDATE user_info SET first_name='$fname',last_name='$lname',id='$id',
+	$query2 = "UPDATE admin_info SET first_name='$fname',last_name='$lname',id='$id',
 				district='$district',email_address='$email',email_notification='$email_notification' WHERE user_name = '$user_name'";
 	$result2 = mysqli_query($con,$query2);
 	
@@ -54,7 +54,8 @@ if(isset($_POST["submit"])) {
 	<a href=home.php>Dashboard</a>
 	<a href=logoff.php class=btn login>Sign Off</a>
 </nav>
-</header><br><br>
+<br>
+</header><br><br><br><br><br>
 	<center>
 	<br><br>
 	<div style=background-image:linear-gradient(white,white);width:40%;font-size:12px;padding:2%;box-shadow:0.5rem,0.5rem,#5478ec33>
@@ -63,7 +64,7 @@ if(isset($_POST["submit"])) {
 	<b>Information has been updated.</b>
 	</font>
 	</h1>
-	<a href='view_user_info.php' style=font-size:20px;text-decoration:none>
+	<a href='view_admin_info.php' style=font-size:20px;text-decoration:none>
 	<input type=submit value=back class='btn'>
 	</a>
 	</div>
@@ -125,7 +126,7 @@ if(isset($_POST["submit"])) {
 		
 		$uname = $_GET["uname"];
 		
-		$query="SELECT first_name, last_name, id, gender, district, email_address, email_notification FROM user_info WHERE user_name = '$uname'";
+		$query="SELECT first_name, last_name, id, gender, district, email_address, email_notification FROM admin_info WHERE user_name = '$uname'";
 
 		$result=mysqli_query($con,$query);
 		if(!$result) {	
@@ -146,7 +147,7 @@ if(isset($_POST["submit"])) {
 	?>
 	
 	<center>
-		<br>
+		<br><br><br><br><br>
 <div style="width:40%">
 	<form name="admin_edit" method="post" action="" onSubmit="return test_form2()">
 	<br>

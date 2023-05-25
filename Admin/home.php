@@ -39,7 +39,7 @@
     $query = "SELECT first_name, last_name, id, gender, district, email_address, email_notification, user_name FROM
     user_info WHERE first_name=$name";
     echo "<td width='5%' align='center' bgcolor=lightgreen>
-		<a href='./edit_Auser_info.php?uname=".urlencode($name)."' style=text-decoration:none; class='btn'>EDIT</a>";
+		<a href='edit_Auser_info.php?uname=".urlencode($name)."' style=text-decoration:none; class='btn'>EDIT</a>";
         ?>
 </div>
 
@@ -53,7 +53,7 @@
 </div>
 
 <div class="box">
-    <h3>Edit/Remove Facilities <br>-></h3>
+    <h3>Remove Facilities <br>-></h3>
     <a href="remove_facility.php" class="btn"> REMOVE </a>
 </div>
 
@@ -65,6 +65,10 @@ if($_SESSION["uname"]=='ucsc'){
 </div>";
 }
 ?>
+<div class=box>
+    <h3>View Plans -></h3>
+    <a href=view_plans.php class=btn> VIEW </a>
+</div>
 </div>
 </section>
 </body>

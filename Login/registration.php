@@ -54,7 +54,7 @@ if(isset($_POST["submit"])) {
 
 <nav class=navbar>
 	<a href=login.php>Home</a>
-	
+	<a href=home.php>Dashboard</a>
 </nav>
 </header><br><br>
 	<center>

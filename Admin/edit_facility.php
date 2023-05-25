@@ -14,32 +14,18 @@ if(isset($_POST["submit"])) {
 	include("dbcon/user.php");
 	require_once("dbcon/dbcon.php");
 	
-	$fname = $_POST["first_name"];
-	$lname = $_POST["last_name"];
-	$id = $_POST["id"];
-	
-	if(isset($_POST["gender"])) {
-		$gender = $_POST["gender"];
-	}
-	
-	$district = $_POST["district"];
-	$email = $_POST["email"];
-	
-	if(isset($_POST["email_notification"])) {
-		$email_notification = "Y";
-	} else {
-		$email_notification = "N";
-	}
+	$Facility_No=$_POST["facility_No"];
+	$Facility_name=$_POST["Facility_Name"];
+	$description=$_POST["Description"];
+	$Price=$_POST["Price"];
 	
 	$user_name = $_POST["user_name"];
 	
-	
-	$query2 = "UPDATE user_info SET first_name='$fname',last_name='$lname',id='$id',
-				district='$district',email_address='$email',email_notification='$email_notification' WHERE user_name = '$user_name'";
+	$query2 = "UPDATE `facility_info` SET `facility_no`='$Facility_No',`facility_name`='$Facility_name',`description`='$description',`price`='$Price' WHERE facility_name = '$user_name'";
 	$result2 = mysqli_query($con,$query2);
 	
 	if(!$result2) {
-		$err=mysqli_error($con)+"update anomally";
+		$err=mysqli_error($con);
 		print $err;
 		exit();
 	} 
@@ -63,7 +49,7 @@ if(isset($_POST["submit"])) {
 	<b>Information has been updated.</b>
 	</font>
 	</h1>
-	<a href='view_user_info.php' style=font-size:20px;text-decoration:none>
+	<a href='add_facility.php' style=font-size:20px;text-decoration:none>
 	<input type=submit value=back class='btn'>
 	</a>
 	</div>
@@ -125,23 +111,20 @@ if(isset($_POST["submit"])) {
 		
 		$uname = $_GET["uname"];
 		
-		$query="SELECT first_name, last_name, id, gender, district, email_address, email_notification FROM user_info WHERE user_name = '$uname'";
+		$query="SELECT * FROM facility_info WHERE facility_name = '$uname'";
 
 		$result=mysqli_query($con,$query);
 		if(!$result) {	
-			print mysql_error();
+			print mysqli_error();
 			exit();  
 		}
 		
 		
 		while($row=mysqli_fetch_array($result)) {
-			$first_name = $row["first_name"];
-			$last_name = $row["last_name"];
-			$id = $row["id"];
-			$gender = $row["gender"];
-			$district = $row["district"];
-			$email_address = $row["email_address"];
-			$email_notification = $row["email_notification"];
+			$facility_No=$row["facility_no"];
+	       $facility_name=$row["facility_name"];
+            $description=$row["description"];
+	         $price=$row["price"];
 		}
 	?>
 	
@@ -157,36 +140,18 @@ if(isset($_POST["submit"])) {
 			<td>
 				<br>
 				
-				<b>FIRST NAME:</b><br>
-				<input type="text" name="first_name" size="50" maxlength="60" value="<?php echo $first_name; ?>"><br><br>
+				<b>Facility NO:</b><br>
+				<input type="text" name="facility_No" size="50" maxlength="60" value="<?php echo $facility_No; ?>"><br><br>
 				
-				<b>LAST NAME:</b><br>
-				<input type="text" name="last_name" size="50" maxlength="60" value="<?php echo $last_name; ?>"><br><br>
+				<b>Facility Name:</b><br>
+				<input type="text" name="Facility_Name" size="50" maxlength="260" value="<?php echo $facility_name; ?>"><br><br>
 						
-				<b>IDENTITY NO:</b><br>
-				<input type="text" name="id" size="10" maxlength="10" align="right" value="<?php echo $id; ?>"><br><br>
-										
-				<b>GENDER:</b><br>
-				<input type="radio" name="gender" value="Male" <?php if($gender == "Male") echo "CHECKED"; ?>> &nbsp; Male
-				<input type="radio" name="gender" value="Female" <?php if($gender == "Female") echo "CHECKED"; ?>> &nbsp; Female
-				<br><br>
-				
-				<b>DISTRICT:</b><br>
-				<select name="district" style="background-color:#ddd;
-    border-radius:0.5rem;">
-					<option <?php if($district == "Colombo") echo "SELECTED"; ?>>Colombo</option>
-					<option <?php if($district == "Gampaha") echo "SELECTED"; ?>>Gampaha</option>
-					<option <?php if($district == "Kalutara") echo "SELECTED"; ?>>Kalutara</option>
-				</select><br><br>
-				
-				<b>E-MAIL:</b><br>
-				<input type="text" name="email" size="50" maxlength="60" value="<?php echo $email_address; ?>"><br><br>
-						
-				<b>SEND E-MAIL NOTIFICATIONS:</b><br>
-				<input type="checkbox" name="email_notification" value="send" <?php if($email_notification == "Y") echo "CHECKED"; ?> ><br><br>
-				
-				
-					
+				<b>Descripton:</b><br>
+				<input type="text" name="Description" size="50" maxlength="60" align="right" value="<?php echo $description; ?>"><br><br>
+									
+				<b>Price($):</b><br>
+				<input type="text" name="Price" size="50" maxlength="10" value="<?php echo $price ?>"><br><br>
+							
 				<input type="hidden" name="user_name" value="<?php echo $uname; ?>">
 				
 					<input type="submit" name="submit" value=" Submit " class="btn">
