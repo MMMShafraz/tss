@@ -44,13 +44,23 @@ if(isset($_POST["submit"])) {
 		exit();
 	} 
 
-	echo "<body style=background-image:linear-gradient(90deg,white,#5478ec33);color:black;font-family:'Poppins',sans-serif;font-size:1.7rem;>
+	echo "<head><link rel=stylesheet href=style.css></head>
+	<body style=background-image:linear-gradient(90deg,white,#5478ec33);color:black;font-family:'Poppins',sans-serif;font-size:1.7rem;>
+	<header class=header>
+<a href=# class=logo><span class=ln1>Online TECH</span><br><span class=ln2>SUPPORT</span> </a>
+
+<nav class=navbar>
+	<a href=index.php>Home</a>
+	<a href=home.php>Dashboard</a>
+	<a href=logoff.php class=btn login>Sign Off</a>
+</nav>
+</header><br><br>
 	<center>
 	<br><br>
 	<div style=background-image:linear-gradient(white,white);width:40%;font-size:12px;padding:2%;box-shadow:0.5rem,0.5rem,#5478ec33>
 	<h1>
 	<font color='black'>
-	<b>Information has been entered.</b>
+	<b>Information has been updated.</b>
 	</font>
 	</h1>
 	<a href='view_user_info.php' style=font-size:20px;text-decoration:none>
@@ -87,9 +97,20 @@ if(isset($_POST["submit"])) {
 		}		
 	</script>
 	<link rel="stylesheet" href="style.css">
-	<link rel="stylesheet" href="../login_style.css">
+	<link rel="stylesheet" href="login_style.css">
 </head>
 <body style="font-size:1.7rem">
+<header class="header">
+
+<a href="#" class="logo"><span class="ln1">Online TECH</span><br><span class="ln2">SUPPORT</span> </a>
+
+<nav class="navbar">
+	<a href="index.php">Home</a>
+	<a href="home.php">Dashboard</a>
+	<a href="logoff.php" class="btn login">Sign Off</a>
+</nav>
+
+</header>
 	<?php
 		echo $mess;
 	?>

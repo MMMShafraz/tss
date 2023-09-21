@@ -14,7 +14,7 @@
 <a href="#" class="logo"><span class="ln1">Online TECH</span><br><span class="ln2">SUPPORT</span> </a>
 
 <nav class="navbar">
-    <a href="index.php">Home</a>
+    <a href="../index.php">Home</a>
     <a href="#services">Facilities</a>
     <a href="#">About</a>
 </nav>

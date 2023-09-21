@@ -33,7 +33,7 @@ if(isset($_GET["uname_d"])) {
 <html>
 <head>
 	<title>View User Information</title>
-	
+	<link rel="stylesheet" href="style.css">
 	<script type="text/javascript">
 		function delete_test() {
 			return confirm("Do you want to delete these information");
@@ -42,6 +42,18 @@ if(isset($_GET["uname_d"])) {
 </head>
 
 <body style="background-image: linear-gradient(to right,white, white, white);font-family:'Poppins',san-serif">
+<header class="header">
+
+<a href="#" class="logo"><span class="ln1">Online TECH</span><br><span class="ln2">SUPPORT</span> </a>
+
+<nav class="navbar">
+	<a href="index.php">Home</a>
+	<a href="home.php">Dashboard</a>
+	<a href="logoff.php" class="btn login">Sign Off</a>
+</nav>
+
+</header>
+<br><br><br><br>
 <h2 align="center" style="
     blue: #2b468b;
     light-blue: .5rem .5rem 0 #afc3ff;
@@ -106,7 +118,7 @@ if(isset($_GET["uname_d"])) {
 		box-shadow: 0.2rem 0.2rem 0 rgba(84, 120, 236, 0.2);
 		border:.1rem solid black;
 		padding:2px;">+ ADD</a><br>
-	<center><a href='home.php' style="text-decoration:none;
+	<!-- <center><a href='home.php' style="text-decoration:none;
     color: black;
     background-color: white;
     font-size:20px;
@@ -120,7 +132,7 @@ if(isset($_GET["uname_d"])) {
     box-shadow: 0.2rem 0.2rem 0 rgba(84, 120, 236, 0.2);
     border: .1rem solid black;
     padding: 2px;
-">Log Out</a></h3>
+">Log Out</a></h3> -->
 		
 </body>
 </html>

@@ -50,7 +50,15 @@ if (mysqli_num_rows($result) > 0) {
 	<link rel="stylesheet" href="../login_style.css"
 </head>
 <body>
-	
+<header class="header">
+
+<a href="#" class="logo"><span class="ln1">Online TECH</span><br><span class="ln2">SUPPORT</span> </a>
+
+<nav class="navbar">
+	<a href="../index.php">Home</a>
+</nav>
+
+</header>
 <center>
 	<br /><br /><br /><br /><br /><br /><br />
 			<div>
@@ -89,3 +97,4 @@ if (mysqli_num_rows($result) > 0) {
 	<center>	
 </body>
 </html>
+

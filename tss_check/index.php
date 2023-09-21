@@ -1,3 +1,10 @@
+<?php
+include("./Admin/dbcon/user.php");
+require_once("./Admin/dbcon/dbcon.php");
+
+$query = "SELECT * FROM facility_info ORDER BY ID";
+$result=mysqli_query($con,$query);
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,7 +12,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Online Technical Support Management System</title>
-    
+    <link rel="stylesheet" href="login_style.css">
     <link rel="stylesheet" href="style.css">
 
 </head>
@@ -48,8 +55,19 @@
     <h1 class="heading"> Facilities </h1>
 
     <div class="box-container">
-
-        <div class="box" id="b1">
+    <?php
+    while($myrow=mysqli_fetch_row($result))  {
+		echo "<tr>";
+		for($f=1;$f<mysqli_num_fields($result)-1;$f++)  {
+			echo "<div class=box id=$f+1>";
+            echo"<h3>".htmlspecialchars($myrow[$f]);
+            echo "</h3><p>".htmlspecialchars($myrow[$f+2]);
+            $f=$f+3;
+            echo "<br><a href=Login/login.php class=btn> learn more </a></div>";
+		}
+    }
+        ?>
+        <!-- <div class="box" id="b1">
             <h3>Tech Support</h3>
             <p>Tech support reps troubleshoot customer tech problems. They resolve issues related to computers, phones, tablets, modems, internet, networks, software, and the like. </p>
             <a href="Login/login.php" class="btn"> learn more </a>
@@ -83,7 +101,7 @@
             <h3>Gadget Support</h3>
             <p>A gadget is a small machine or device which does something useful. You sometimes refer to something as a gadget you are suggesting that it is complicated.</p>
             <a href="Login/login.php" class="btn"> learn more </a>
-        </div>
+        </div> -->
 
     </div>
 

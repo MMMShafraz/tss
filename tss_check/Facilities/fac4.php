@@ -14,7 +14,7 @@
 <a href="#" class="logo"><span class="ln1">Online TECH</span><br><span class="ln2">SUPPORT</span> </a>
 
 <nav class="navbar">
-    <a href="index.php">Home</a>
+    <a href="../index.php">Home</a>
     <a href="#services">Facilities</a>
     <a href="#">About</a>
 </nav>
@@ -32,12 +32,17 @@
         </div>
 
         <div class="content">
-            <h2>Remote Computer Support To Solve All Your Technical Problems</h2>
-            <p>Online TECH SUPPORT is a leading tech support brand which renders non-stop support to its consumers and businesses across the globe. Since our humble beginning, we have primarily focused on making technology simpler for the world by delivering turnkey technical support solutions for computers and peripherals.</p>
-            <p>How we instantly fix technical conflicts? </p>
-            <p>By leveraging cutting-edge technology and tools, AskPCExperts provides dedicated support to millions of clients across business verticals. Our services are available on a 24/7 basis, 365 days a year. Our team of technical experts leaves no stone unturned to provide instant remote tech help for your home and office devices. We proficiently cater to all tech issues, right from PC optimization, comprehensive diagnostic and repair, device setup and installation to nasty virus removal.
-            Leave it to our experts, you just need to sit back and relax.</p>
-            <p>Your PC will run like new- We fix simple to complex PC technical issues within no time.</p>
+            <<h2>What is Windows Help and Support?</h2>
+  <p>Windows tech support by AskPCExperts enables users to diagnose, troubleshoot and quickly repair issues related to their Windows operating system, without any hassle. Our team of well-qualified technocrats understands Windows support issues and offers online resolution to Windows and other technical problems related to your computer simultaneously.</p>
+  <p>We render a comprehensive support for the installation and upgradation of the following operating systems (OS):</p>
+  <ul class="wireless-tech-nav">
+  <li>Windows 95/98/2000</li>
+  <li>Windows XP/Professional</li>
+  <li>Windows Vista</li>
+  <li>Windows 7/ 8 Pro</li>
+  <li>Windows NT</li>
+  </ul>
+  <p>Online TECH SUPPORT provide end-to-end remote Windows help and support to cater to all your dynamic business requirements. We ascertain that your Windows are always up and running.</p>
         </div>
 
     </div>
